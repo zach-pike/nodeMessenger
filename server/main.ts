@@ -63,7 +63,8 @@ wss.on("connection", (socket) => {
                     send({ "intent": _data.intent, "content": { "data": (_data.content.data == config.roomPW ? true : false), "userid": _data.content.userid } })
                     break;
                 case "ping":
-                    send({ "intent": _data.intent, "content": { "data": true, "userid": null }})
+                    send({ "intent": "ping", "content": { "data": true, "userid": null }})
+                    console.log("got ping")
                     break;
             }
         }
